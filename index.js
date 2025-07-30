@@ -1,34 +1,28 @@
 $(document).ready(function(){
-    $('.center').slick({
-        centerMode: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        dots: true,
-        arrows: false,
-        responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              arrows: false,
-              centerMode: true,
-              centerPadding: '40px',
-              slidesToShow: 3
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              arrows: false,
-              centerMode: true,
-              centerPadding: '40px',
-              slidesToShow: 1
-            }
-          }
-        ]
-    });
-
+  $('.center').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: '0px',
+    autoplay: true,
+    autoplaySpeed: 2000,
+    dots: true,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024, // tablets
+        settings: { slidesToShow: 1, centerPadding: '40px' }
+      },
+      {
+        breakpoint: 768,  // large phones
+        settings: { slidesToShow: 1, centerPadding: '20px' }
+      },
+      {
+        breakpoint: 480,  // small phones
+        settings: { slidesToShow: 1, centerPadding: '0px' }
+      }
+    ]
+  });
     function createHomePageProductCard(obj) {
       
 
@@ -43,6 +37,10 @@ $(document).ready(function(){
       productImage.classList.add('product-image');
       productImage.src = obj.preview;
       productImage.alt = obj.name + ' Pic';
+
+      productImage.loading = 'lazy';
+      productImage.decoding = 'async';
+
 
       productLink.appendChild(productImage);
 

@@ -6,6 +6,10 @@ $(document).ready(function() {
         var image = document.createElement('img');
         image.src = url
 
+        image.loading = 'lazy';
+        image.decoding = 'async';
+
+
         if(pos === 0) {
             image.classList.add("active-image");
         }
@@ -20,8 +24,10 @@ $(document).ready(function() {
     }
 
     $.get('https://5d76bf96515d1a0014085cf9.mockapi.io/product/' + productId, function(data, status) {
-        currentObj = data;
-        $('#product-preview').attr('src', data.preview)
+    currentObj = data;
+    $('#product-preview')
+      .attr('src', data.preview)
+      .attr('decoding', 'async');
         $('#product-title').html(data.name);
         $('#product-brand').html(data.brand);
         $('#description').html(data.description);

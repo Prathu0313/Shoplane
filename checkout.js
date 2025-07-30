@@ -9,6 +9,8 @@ $(document).ready(function() {
         var productImg = document.createElement('img');
         productImg.classList.add('checkout-product-img');
         productImg.src = obj.preview;
+        productImg.loading = 'lazy';
+        productImg.decoding = 'async';  
         firstInnerDiv.appendChild(productImg);
 
         var secondInnerDiv = document.createElement('div');

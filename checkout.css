@@ -95,3 +95,41 @@
   color: white;
   text-decoration: none; 
 }
+
+#content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+#content-wrapper > div:first-of-type,
+#content-wrapper > div:last-of-type {
+  width: 100%;
+  margin: 0;
+}
+
+.checkout-card {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  align-items: center;
+  gap: 12px;
+  max-width: none;
+}
+
+
+#btn-place-order {
+  width: 100%;
+  min-height: 44px;
+  border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+  #content-wrapper {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+  #content-wrapper > div:last-of-type {
+    margin-top: 48px;
+    margin-left: 3%;
+  }
+}

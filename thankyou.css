@@ -13,3 +13,11 @@ h1{
   color: white;
   text-decoration: none; 
 }
+#thankyou-section {
+  padding: 40px 16px;
+}
+#thankyou-section img {
+  max-width: 60vw;
+  height: auto;
+}
+h1 { font-weight: 400; font-size: clamp(1.25rem, 5vw, 2rem); }
