@@ -208,3 +208,5 @@ footer > div { padding: 0; flex: 1 1 220px; }
   #topbar { padding: 10px 4%; }
   main { margin-top: 76px; }
 }
+html, body { overflow-x: hidden; }
+
