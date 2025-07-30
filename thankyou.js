@@ -14,4 +14,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     fadeInElement(thankyouSection);
+    try {
+  var saved = window.localStorage.getItem('checkout-customer');
+  if (saved) {
+    var c = JSON.parse(saved);
+    var name = c.fullName ? ' ' + c.fullName : '';
+    var msg = document.createElement('p');
+    msg.textContent = 'Thanks' + name + '! Your order will be shipped to ' + c.address1 + ', ' + c.city + '.';
+    document.getElementById('thankyou-section').appendChild(msg);
+  }
+} catch(e) {}
 });

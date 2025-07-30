@@ -51,17 +51,14 @@ $(document).ready(function() {
     $('#item-count').html(productList.length);
     $('#total-amount').html(grandTotal);
 
-        $('#btn-place-order').click(function() {
-            var productList = window.localStorage.getItem('product-list');
-            productList = productList === null || productList === '' ? [] : productList;
-            productList = productList.length > 0 ? JSON.parse(productList) : [];
-        
-            if (productList.length > 0) {
-                localStorage.setItem('product-list', []);
-                window.location.href = './thankyou.html';
-            } else {
-                alert('Your cart is empty');
-            }
-        })
+        $('#btn-proceed').click(function () {
+  var productList = window.localStorage.getItem('product-list');
+  productList = productList ? JSON.parse(productList) : [];
+  if (productList.length > 0) {
+    window.location.href = './checkout-details.html';
+  } else {
+    alert('Your cart is empty');
+  }
+});
     
     })
