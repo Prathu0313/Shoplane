@@ -2,7 +2,7 @@
  * api.js — Shoplane API configuration
  * Change BASE_URL to point to your deployed backend.
  */
-const API_BASE = 'http://localhost:8080/api';
+const API_BASE = 'https://shoplane-backend-wqb1.onrender.com/api';
 
 window.ShoplaneAPI = {
   products:      `${API_BASE}/products`,
