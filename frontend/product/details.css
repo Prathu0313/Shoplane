@@ -1,0 +1,98 @@
+/* details.css */
+
+/* Skeleton shimmer */
+.skeleton-pulse {
+  background: linear-gradient(90deg, #ede9e3 25%, #e2ddd6 50%, #ede9e3 75%) !important;
+  background-size: 200% 100% !important;
+  animation: skeletonShimmer 1.6s ease-in-out infinite;
+}
+@keyframes skeletonShimmer {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+
+/* Product layout fade in */
+#product-wrapper { animation: productFadeIn 0.5s ease both; }
+@keyframes productFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.breadcrumb { padding: 20px 5%; font-size: 0.82rem; color: var(--muted); display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+
+.error-state { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 80px 5%; min-height: 60vh; }.breadcrumb a { color: var(--muted); transition: color 0.2s; }
+.breadcrumb a:hover { color: var(--accent); }
+.breadcrumb span { color: var(--border); }
+.breadcrumb span:last-child { color: var(--ink); }
+
+.state-center { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 100px 5%; gap: 16px; color: var(--muted); text-align: center; }
+.state-spinner { width: 36px; height: 36px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; }
+
+.product-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; padding: 0 5% 80px; max-width: 1200px; margin: 0 auto; }
+
+/* Gallery */
+.gallery-col { position: sticky; top: calc(var(--nav-h) + 20px); align-self: start; }
+.gallery-main { position: relative; border-radius: 20px; overflow: hidden; background: #f0ece6; aspect-ratio: 3/4; }
+.gallery-main img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s; }
+.gallery-zoom { position: absolute; top: 14px; right: 14px; width: 36px; height: 36px; background: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); cursor: pointer; transition: background 0.2s; }
+.gallery-zoom:hover { background: var(--accent); }
+.gallery-zoom:hover svg { stroke: var(--dark); }
+.gallery-zoom svg { width: 16px; height: 16px; stroke: var(--ink); }
+.gallery-thumbs { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+.gallery-thumb { width: 72px; height: 88px; border-radius: 10px; overflow: hidden; cursor: pointer; border: 2px solid transparent; transition: border-color 0.2s, transform 0.2s; background: #f0ece6; flex-shrink: 0; }
+.gallery-thumb:hover { transform: scale(1.05); }
+.gallery-thumb.active { border-color: var(--accent); }
+.gallery-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Zoom modal */
+.zoom-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 9000; align-items: center; justify-content: center; }
+.zoom-overlay.open { display: flex; }
+.zoom-close { position: absolute; top: 20px; right: 24px; color: var(--white); font-size: 1.5rem; cursor: pointer; line-height: 1; }
+#zoom-img { max-width: 90vw; max-height: 90vh; border-radius: 12px; object-fit: contain; }
+
+/* Info col */
+.info-col { padding-top: 8px; }
+.info-brand { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+.info-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 400; line-height: 1.15; margin-bottom: 16px; }
+.info-rating { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
+.rating-stars { color: var(--accent); font-size: 1.1rem; letter-spacing: 1px; }
+.rating-count { font-size: 0.82rem; color: var(--muted); }
+.info-price { margin-bottom: 20px; }
+.price-current { font-size: 2rem; font-weight: 700; display: block; line-height: 1; }
+.price-note { font-size: 0.78rem; color: var(--muted); margin-top: 4px; display: block; }
+.info-desc { font-size: 0.92rem; line-height: 1.8; color: var(--muted); margin-bottom: 28px; }
+
+/* Size */
+.size-section { margin-bottom: 24px; }
+.option-label { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.05em; margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+.size-guide-link { font-size: 0.78rem; font-weight: 400; color: var(--accent); cursor: pointer; text-decoration: underline; margin-left: auto; }
+.size-grid { display: flex; gap: 8px; flex-wrap: wrap; }
+.size-btn { padding: 8px 16px; border: 1px solid var(--border); border-radius: 8px; font-size: 0.82rem; font-weight: 500; cursor: pointer; background: var(--white); transition: all 0.2s; min-width: 48px; }
+.size-btn:hover { border-color: var(--ink); }
+.size-btn.active { background: var(--ink); color: var(--white); border-color: var(--ink); }
+
+/* Qty */
+.qty-section { margin-bottom: 28px; }
+.qty-control { display: flex; align-items: center; gap: 12px; }
+.qty-btn { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.2rem; line-height: 1; transition: all 0.2s; background: var(--white); }
+.qty-btn:hover { background: var(--ink); color: var(--white); border-color: var(--ink); }
+#qty-value { font-size: 1.1rem; font-weight: 600; min-width: 24px; text-align: center; }
+
+/* CTAs */
+.cta-row { display: flex; gap: 12px; margin-bottom: 16px; }
+.btn-add-cart { flex: 1; justify-content: center; font-size: 0.9rem; padding: 16px 24px; }
+.btn-wishlist { width: 52px; height: 52px; border-radius: 50%; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; transition: all 0.2s; flex-shrink: 0; }
+.btn-wishlist:hover { border-color: var(--red); }
+.btn-wishlist.active { background: #fff0f0; border-color: var(--red); }
+.btn-wishlist.active svg { fill: var(--red); stroke: var(--red); }
+
+.cart-feedback { font-size: 0.85rem; color: var(--green); font-weight: 500; min-height: 20px; margin-bottom: 8px; }
+
+/* Trust */
+.trust-badges { display: flex; flex-direction: column; gap: 10px; margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--border); }
+.trust-item { display: flex; align-items: center; gap: 10px; font-size: 0.82rem; color: var(--muted); }
+
+@media (max-width: 768px) {
+  .product-layout { grid-template-columns: 1fr; gap: 32px; padding: 0 4% 60px; }
+  .gallery-col { position: static; }
+}
