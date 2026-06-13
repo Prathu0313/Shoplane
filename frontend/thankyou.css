@@ -1,0 +1,56 @@
+/* thankyou.css */
+.checkout-steps { display: flex; align-items: center; padding: 32px 5%; gap: 0; }
+.step { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.step-circle { width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.82rem; font-weight: 600; color: var(--muted); transition: all 0.3s; }
+.step.active .step-circle, .step.done .step-circle { background: var(--green); border-color: var(--green); color: var(--white); }
+.step span { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.step.active span, .step.done span { color: var(--ink); }
+.step-line { flex: 1; height: 2px; background: var(--border); margin: 0 8px; margin-bottom: 20px; }
+.step-line.done { background: var(--green); }
+
+main { display: flex; align-items: center; justify-content: center; padding: 24px 5% 80px; }
+
+.ty-wrapper { max-width: 600px; width: 100%; text-align: center; }
+
+/* Animated checkmark */
+.ty-icon { margin: 0 auto 28px; width: 80px; height: 80px; }
+.checkmark { width: 80px; height: 80px; }
+.checkmark-circle {
+  stroke: var(--green); stroke-width: 2;
+  stroke-dasharray: 166; stroke-dashoffset: 166;
+  animation: stroke 0.6s cubic-bezier(0.65,0,0.45,1) forwards;
+}
+.checkmark-check {
+  stroke: var(--green); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  stroke-dasharray: 48; stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65,0,0.45,1) 0.6s forwards;
+}
+@keyframes stroke { to { stroke-dashoffset: 0; } }
+
+.ty-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 400; margin-bottom: 12px; animation: fadeUp 0.6s 0.4s both; }
+.ty-subtitle { font-size: 1rem; color: var(--muted); line-height: 1.6; margin-bottom: 36px; animation: fadeUp 0.6s 0.55s both; }
+
+.ty-order-card { background: var(--white); border-radius: 20px; border: 1px solid var(--border); padding: 24px; margin-bottom: 32px; text-align: left; animation: fadeUp 0.6s 0.7s both; }
+.ty-order-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; }
+.ty-order-row:last-child { border-bottom: none; }
+.ty-order-row span { color: var(--muted); flex-shrink: 0; }
+.ty-order-row strong { text-align: right; font-weight: 600; }
+
+.ty-steps { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 36px; flex-wrap: wrap; animation: fadeUp 0.6s 0.85s both; }
+.ty-step { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.ty-step-icon { font-size: 1.8rem; }
+.ty-step-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); text-align: center; }
+.ty-step.muted .ty-step-icon { opacity: 0.25; }
+.ty-step.muted .ty-step-label { color: var(--muted); }
+.ty-step-arrow { font-size: 1.2rem; color: var(--border); margin-bottom: 20px; }
+.ty-step-arrow.muted { opacity: 0.4; }
+
+.ty-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; animation: fadeUp 0.6s 1s both; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+@media print {
+  #nav, .checkout-steps, .ty-steps, .ty-actions, footer { display: none; }
+  body { background: white; }
+  .ty-order-card { border: 1px solid #ccc; }
+}

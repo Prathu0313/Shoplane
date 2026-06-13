@@ -1,0 +1,13 @@
+/Users/prathu/Downloads/shoplane-full/backend/src/main/java/com/shoplane/backend/ShoplaneApplication.java
+/Users/prathu/Downloads/shoplane-full/backend/src/main/java/com/shoplane/backend/config/CorsConfig.java
+/Users/prathu/Downloads/shoplane-full/backend/src/main/java/com/shoplane/backend/config/DataSeeder.java
+/Users/prathu/Downloads/shoplane-full/backend/src/main/java/com/shoplane/backend/controller/OrderController.java
+/Users/prathu/Downloads/shoplane-full/backend/src/main/java/com/shoplane/backend/controller/ProductController.java
+/Users/prathu/Downloads/shoplane-full/backend/src/main/java/com/shoplane/backend/dto/OrderRequest.java
+/Users/prathu/Downloads/shoplane-full/backend/src/main/java/com/shoplane/backend/exception/GlobalExceptionHandler.java
+/Users/prathu/Downloads/shoplane-full/backend/src/main/java/com/shoplane/backend/model/Order.java
+/Users/prathu/Downloads/shoplane-full/backend/src/main/java/com/shoplane/backend/model/Product.java
+/Users/prathu/Downloads/shoplane-full/backend/src/main/java/com/shoplane/backend/repository/OrderRepository.java
+/Users/prathu/Downloads/shoplane-full/backend/src/main/java/com/shoplane/backend/repository/ProductRepository.java
+/Users/prathu/Downloads/shoplane-full/backend/src/main/java/com/shoplane/backend/service/OrderService.java
+/Users/prathu/Downloads/shoplane-full/backend/src/main/java/com/shoplane/backend/service/ProductService.java
